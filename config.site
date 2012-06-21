@@ -1,0 +1,21 @@
+## `ReZoZeR:~/etc/config.site' Autoconf configuration file (see `~/.bashrc')
+## created by hand <jgmbenoit@mailsnare.net>
+##
+## last major modification: 2005/01/29
+## last minor modification: 2010/05/03
+## last minor modification: 2011/04/16 by lina
+## last minor modification: 2012/04/20
+test "$prefix" = NONE && prefix=${HOME}
+test "$sysconfdir" = '${prefix}/etc' && sysconfdir=${HOME}/etc
+## test -z "$CC" && CC=gcc-4.4
+##with_gts=no
+##with_libgvc=no
+##with_libxml=no
+##with_libhdf5=no
+####with_uuid=no
+##with_gmp=no
+####with_gmp_prefix=${HOME}
+##
+## vim:syntax=sh
+##
+## End of file `dove:~/etc/config.site'.
