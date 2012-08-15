@@ -1,0 +1,13 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+iface eth0 inet dhcp
+        dns-nameservers 155.69.5.7 155.69.5.225
+        dns-search ntu.edu.sg
+
+# The primary network interface
+allow-hotplug eth0
+iface eth0 inet dhcp
