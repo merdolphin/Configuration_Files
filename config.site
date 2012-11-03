@@ -1,4 +1,4 @@
-## `ReZoZeR:~/etc/config.site' Autoconf configuration file (see `~/.bashrc')
+## `:~/etc/config.site' Autoconf configuration file (see `~/.bashrc')
 ##
 ## last major modification: 2005/01/29
 ## last minor modification: 2010/05/03
@@ -17,4 +17,4 @@ test "$sysconfdir" = '${prefix}/etc' && sysconfdir=${HOME}/etc
 ##
 ## vim:syntax=sh
 ##
-## End of file `dove:~/etc/config.site'.
+## End of file `:~/etc/config.site'.
