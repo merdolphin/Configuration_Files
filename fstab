@@ -1,0 +1,33 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+proc            /proc           proc    defaults        0       0
+# / was on /dev/sda5 during installation
+UUID=2a687c3c-ffb4-4577-9781-beb6b88eb71b /               ext4    errors=remount-ro 0       1
+# /backup was on /dev/sda14 during installation
+UUID=114ea034-62b3-4266-b80f-e8bd43c90bfe /mnt/backup         ext4    defaults,noauto        0       2
+# /boot was on /dev/sda4 during installation
+UUID=f38f09c1-8cc3-485f-8235-1b23fc26fcc9 /boot           ext4    defaults        0       2
+# /home was on /dev/sda7 during installation
+UUID=c826cf6e-a284-4741-a8e4-89b75991d801 /home           ext4    defaults        0       2
+# /scratch was on /dev/sda13 during installation
+UUID=25ad7887-39b1-4375-b9aa-0840cb84cb75 /scratch        ext4    defaults        0       2
+# /tmp was on /dev/sda8 during installation
+UUID=ba00a966-7352-4749-b478-788fea4f1a83 /tmp            ext4    defaults        0       2
+# /usr was on /dev/sda9 during installation
+UUID=49ce4cbd-7ac8-4b2d-84da-85143d214ee3 /usr            ext4    defaults        0       2
+# /usr/local was on /dev/sda10 during installation
+UUID=f013d06c-641d-4340-a620-9aeb3ce9a356 /usr/local      ext4    defaults        0       2
+# /var was on /dev/sda11 during installation
+UUID=4c106bc2-cb98-4795-9cff-6da66d0da771 /var            ext4    defaults        0       2
+# /var/local was on /dev/sda12 during installation
+UUID=97068b98-deae-4d79-baa1-0e3110aa18b6 /var/local      ext4    defaults        0       2
+# swap was on /dev/sda6 during installation
+UUID=0dc0ac69-7e3a-43d5-8582-aac085053f83 none            swap    sw              0       0
+/dev/scd0       /media/cdrom0   udf,iso9660 user,noauto     0       0
+# mac was on /dev/sda2
+/dev/sda2        /mnt/mac            hfsplus ro,nouser,noauto,noexec              0	  0
