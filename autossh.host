@@ -1,0 +1,50 @@
+#!/bin/sh
+## modified by hand  
+##
+## last major modification 2011/05/05
+## last minor modification 2013/07/31
+##
+##
+## Example script to start up tunnel with autossh.
+## remote port forwarding example
+##
+#
+# This script will tunnel TUNNELPORT from the remote host
+# to 22 on the local host. On remote host do:
+#     ssh -p TUNNELPORT localhost
+#
+# Quick check
+#     lsof -i
+#
+# To exit:
+#     kill -TERM <autossh PID>
+#
+# $Id: autossh.host,v 1.6 2004/01/24 05:53:09 harding Exp $
+#
+
+ID=lina
+REMOTEHOST=merdolphin.void.org
+REMOTEPORT=1991
+TUNNELPORT=2520
+HOSTPORT=22
+
+if [ "X$SSH_AUTH_SOCK" = "X" ]; then
+	eval `ssh-agent -s`
+##	ssh-add $HOME/.ssh/id_rsa
+	ssh-add $HOME/.ssh/id_ecdsa
+fi
+
+#AUTOSSH_POLL=600
+#AUTOSSH_PORT=20000
+#AUTOSSH_GATETIME=30
+#AUTOSSH_LOGFILE=$HOST.log
+#AUTOSSH_DEBUG=yes 
+#AUTOSSH_PATH=/usr/local/bin/ssh
+AUTOSSH_MAXLIFETIME=64811
+export AUTOSSH_POLL AUTOSSH_LOGFILE AUTOSSH_DEBUG AUTOSSH_PATH AUTOSSH_GATETIME AUTOSSH_PORT
+
+autossh -2 -fN -R ${TUNNELPORT}:localhost:${HOSTPORT} -p ${REMOTEPORT} ${ID}@${REMOTEHOST}
+
+:
+##
+##
